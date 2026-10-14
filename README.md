@@ -118,36 +118,19 @@ Las películas con `vote_count = 0` no se consideran para los indicadores de val
 
 ```text
 StreamView_Analytics/
-│
-├── dashboard/
-│   └── app.py
-│
 ├── data/
-│   ├── raw/
-│   │   ├── netflix_movies_detailed_up_to_2025.csv
-│   │   └── netflix_tv_shows_detailed_up_to_2025.csv
-│   │
-│   └── processed/
-│       ├── catalogo_integrado.csv
-│       ├── resumen_por_genero.csv
-│       ├── resumen_por_genero_tv_shows.csv
-│       ├── resumen_por_tipo.csv
-│       └── tv_shows_clean.csv
-│
-├── images/
-│   └── visualizaciones exploratorias de películas, series y catálogo integrado
-│
-├── notebooks/
-│   ├── 01_analisis_popularidad_por_genero.ipynb
-│   └── 02_analisis_series_popularidad_por_genero.ipynb
-│
-├── Presentation/
-│   └── Informe_Ejecutivo_EP3_StreamView_Analytics.pdf
-│
+│   ├── raw/          Archivos originales sin modificar (películas y series)
+│   ├── processed/    Catálogo integrado y auditoría de calidad
+│   └── looker/       streamview_generos_looker.csv (tabla para Power BI)
+├── notebooks/        Análisis exploratorio
+├── dashboard/        StreamView_Dashboard.pbix (dashboard principal, Power BI)
+│                     app.py (versión previa en Streamlit, opcional)
+├── images/           Capturas de las 7 páginas del dashboard
 ├── src/
-│   ├── analysis.py
-│   └── preprocessing.py
-│
+│   ├── preprocessing.py   Limpieza e integración de las fuentes
+│   ├── analysis.py        Funciones de análisis
+│   └── export_looker.py   Genera la tabla para Power BI
+├── Documentos/       Informe ejecutivo (PDF) y presentación
 ├── requirements.txt
 └── README.md
 ```
